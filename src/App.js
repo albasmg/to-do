@@ -1,8 +1,23 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
+import Form from './components/Form/Form';
+import PendingTasks from './components/PendingTasks/PendingTasks';
 
 const App = () => {
-  return <h1>Hola</h1>;
+  const [task, setTask] = useState('');
+  const [pendingTasks, setPendingTasks] = useState([]);
+
+  const handleButton = () => {
+    setPendingTasks([...pendingTasks, task]);
+  };
+
+  const handleInputChange = (ev) => setTask(ev.target.value);
+
+  return (
+    <>
+      <Form onButtonClick={handleButton} onFormChange={handleInputChange} />
+      {pendingTasks.length > 0 && <PendingTasks tasks={pendingTasks} />}
+    </>
+  );
 };
 
 export default App;
