@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { rem } from '../../assets/stylesheets/functions';
 
 export const CompletedTasksContainer = styled.div`
   width: 50%;
@@ -8,16 +9,21 @@ export const CompletedTasksContainer = styled.div`
 
 export const Title = styled.h2`
   font-size: 18px;
+  text-align: center;
 `;
 
 export const TaskContainer = styled.div`
   display: flex;
+  align-items: center;
+  margin-top: ${rem(30)};
 `;
 
 export const Checkbox = styled.div`
-  height: 30px;
-  width: 30px;
-  border: 2px solid black;
+  height: ${rem(20)};
+  width: ${rem(20)};
+  border: ${rem(1)} solid black;
 `;
 
-export const TaskName = styled.p``;
+export const TaskName = styled.p`
+  margin-left: rem(10);
+`;

@@ -13,9 +13,7 @@ const TaskList = ({ tasks, title, onCheckboxClick, isPendingList }) => {
       <Title>{title}</Title>
       {tasks.map(({ name, id }) => (
         <TaskContainer key={id}>
-          <Checkbox
-            onClick={() => onCheckboxClick(id, isPendingList)}
-          ></Checkbox>
+          <Checkbox onClick={() => onCheckboxClick(id, isPendingList)} />
           <TaskName>{name}</TaskName>
         </TaskContainer>
       ))}

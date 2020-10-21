@@ -1,19 +1,8 @@
 import React, { useState } from 'react';
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
 import { v4 as uuid } from 'uuid';
+import { Main } from './AppStyles';
 import Form from './components/Form/Form';
 import TaskList from './components/TaskList/TaskList';
-
-const GlobalStyle = createGlobalStyle`
-  ${reset}
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Barlow', sans-serif;
-  }
-`;
 
 const TASK_STATUS = {
   PENDING: 'pending',
@@ -29,6 +18,7 @@ const App = () => {
       ...tasks,
       { id: uuid(), name: task, status: TASK_STATUS.PENDING },
     ]);
+    setTask('');
   };
 
   const handleInputChange = (ev) => setTask(ev.target.value);
@@ -58,22 +48,24 @@ const App = () => {
 
   return (
     <>
-      <GlobalStyle />
       <Form
         onButtonClick={handleAddTaskButton}
         onFormChange={handleInputChange}
+        value={task}
       />
-      <TaskList
-        title="Pending tasks"
-        tasks={getPendingTasks()}
-        onCheckboxClick={handleTaskChecked}
-        isPendingList
-      />
-      <TaskList
-        title="Completed tasks"
-        tasks={getCompletedTasks()}
-        onCheckboxClick={handleTaskChecked}
-      />
+      <Main>
+        <TaskList
+          title="Pending tasks"
+          tasks={getPendingTasks()}
+          onCheckboxClick={handleTaskChecked}
+          isPendingList
+        />
+        <TaskList
+          title="Completed tasks"
+          tasks={getCompletedTasks()}
+          onCheckboxClick={handleTaskChecked}
+        />
+      </Main>
     </>
   );
 };
