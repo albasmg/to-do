@@ -1,13 +1,12 @@
 import React from 'react';
 
-const PendingTasks = ({ tasks, onCheckboxClick }) => {
+const CompletedTasks = ({ tasks }) => {
   return (
     <div>
-      <h1>Pending tasks</h1>
-      {tasks.map(({ id, name }) => (
+      <h1>Completed tasks</h1>
+      {tasks.map(({ name, id }) => (
         <div key={id}>
           <div
-            onClick={(ev) => onCheckboxClick(id)}
             style={{ height: '30px', width: '30px', border: '2px solid black' }}
           ></div>
           <p>{name}</p>
@@ -17,4 +16,4 @@ const PendingTasks = ({ tasks, onCheckboxClick }) => {
   );
 };
 
-export default PendingTasks;
+export default CompletedTasks;
