@@ -1,11 +1,15 @@
 import React from 'react';
+import { Title, FormContainer, FormInput, FormButton } from './FormStyles';
 
 const Form = ({ onButtonClick, onFormChange }) => {
   return (
-    <div>
-      <input type="text" onChange={(ev) => onFormChange(ev)}></input>
-      <button onClick={() => onButtonClick()}>Add</button>
-    </div>
+    <>
+      <Title>To do</Title>
+      <FormContainer>
+        <FormInput type="text" onChange={(ev) => onFormChange(ev)}></FormInput>
+        <FormButton onClick={() => onButtonClick()}>Add</FormButton>
+      </FormContainer>
+    </>
   );
 };
 
