@@ -8,9 +8,8 @@ export const TasksContainer = styled.div`
 
   @media all and (max-width: 500px) {
     width: 100%;
-    height: ${rem(200)};
+    min-height: ${rem(200)};
     margin: auto;
-    overflow-y: scroll;
 
     :last-child {
       margin-top: 20px;
