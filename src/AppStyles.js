@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { rem } from './assets/stylesheets/functions';
 
 export const Main = styled.main`
@@ -6,4 +6,9 @@ export const Main = styled.main`
   justify-content: center;
   width: 50%;
   margin: ${rem(30)} auto;
+
+  @media all and (max-width: 500px) {
+    flex-direction: column;
+    width: 90%;
+  }
 `;

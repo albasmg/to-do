@@ -41,10 +41,13 @@ const App = () => {
   };
 
   const getPendingTasks = () =>
-    tasks.filter((task) => task.status === TASK_STATUS.PENDING);
+    tasks.filter(({ status }) => status === TASK_STATUS.PENDING);
 
   const getCompletedTasks = () =>
-    tasks.filter((task) => task.status === TASK_STATUS.COMPLETED);
+    tasks.filter(({ status }) => status === TASK_STATUS.COMPLETED);
+
+  const handleClearButton = (taskId) =>
+    setTasks(tasks.filter(({ id }) => id !== taskId));
 
   return (
     <>
@@ -58,12 +61,14 @@ const App = () => {
           title="Pending tasks"
           tasks={getPendingTasks()}
           onCheckboxClick={handleTaskChecked}
+          onClearButtonClick={handleClearButton}
           isPendingList
         />
         <TaskList
           title="Completed tasks"
           tasks={getCompletedTasks()}
           onCheckboxClick={handleTaskChecked}
+          onClearButtonClick={handleClearButton}
         />
       </Main>
     </>

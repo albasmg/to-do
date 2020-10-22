@@ -26,10 +26,13 @@ export const FormInput = styled.input`
   border-bottom: 2px solid ${(props) => props.theme.colors.primaryColor};
   background-color: ${(props) => props.theme.colors.lightColor};
   outline: none;
+  font-size: ${rem(14)};
+  font-weight: 300;
   color: ${(props) => props.theme.colors.darkColor};
 
   ::placeholder {
     color: ${(props) => props.theme.colors.mediumColor};
+    font-size: ${rem(14)};
     font-weight: 100;
   }
 `;
@@ -37,7 +40,8 @@ export const FormInput = styled.input`
 export const FormButton = styled.button`
   height: ${rem(40)};
   width: ${rem(80)};
-  border: 2px solid ${(props) => props.theme.colors.primaryColor};
+  border: ${rem(2)} solid ${(props) => props.theme.colors.primaryColor};
+  font-size: ${rem(14)};
   color: ${(props) => props.theme.colors.lightColor};
   background-color: ${(props) => props.theme.colors.primaryColor};
   margin-left: ${rem(8)};
