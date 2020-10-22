@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'Barlow', sans-serif;
+    background-color: #F3F2F0;
     }
 `;
 

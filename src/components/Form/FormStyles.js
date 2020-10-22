@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { rem } from '../../assets/stylesheets/functions';
 
 export const Header = styled.header`
-  height: ${rem(200)};
+  height: auto;
 `;
 
 export const Title = styled.h1`
@@ -21,18 +21,27 @@ export const FormContainer = styled.div`
 `;
 
 export const FormInput = styled.input`
-  height: ${rem(40)};
   width: ${rem(200)};
   border: none;
-  background-color: ${(props) => props.theme.colors.primaryColor};
-  border-bottom: 2px solid ${(props) => props.theme.colors.lightColor};
+  border-bottom: 2px solid ${(props) => props.theme.colors.primaryColor};
+  background-color: ${(props) => props.theme.colors.lightColor};
   outline: none;
+  color: ${(props) => props.theme.colors.darkColor};
+
+  ::placeholder {
+    color: ${(props) => props.theme.colors.mediumColor};
+    font-weight: 100;
+  }
 `;
 
 export const FormButton = styled.button`
   height: ${rem(40)};
   width: ${rem(60)};
-  border: none;
-  background-color: ${(props) => props.theme.colors.secondaryColor};
-  margin-left: 8px;
+  border: 2px solid ${(props) => props.theme.colors.primaryColor};
+  color: ${(props) => props.theme.colors.primaryColor};
+  background-color: ${(props) => props.theme.colors.lightColor};
+  margin-left: ${rem(8)};
+  border-radius: ${rem(8)};
+  outline: none;
+  cursor: pointer;
 `;

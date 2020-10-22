@@ -10,10 +10,16 @@ import {
 const Form = ({ onButtonClick, onFormChange, value }) => {
   return (
     <Header>
-      <Title>To do</Title>
+      <Title>
+        What do you have to do today?{' '}
+        <span role="img" aria-label="stars">
+          ✨
+        </span>
+      </Title>
       <FormContainer>
         <FormInput
           type="text"
+          placeholder="Type your new task here!"
           onChange={(ev) => onFormChange(ev)}
           value={value}
         />

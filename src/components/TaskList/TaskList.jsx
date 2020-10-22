@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  CompletedTasksContainer,
+  TasksContainer,
   Title,
   TaskContainer,
   Checkbox,
@@ -9,7 +9,7 @@ import {
 
 const TaskList = ({ tasks, title, onCheckboxClick, isPendingList }) => {
   return (
-    <CompletedTasksContainer>
+    <TasksContainer>
       <Title>{title}</Title>
       {tasks.map(({ name, id }) => (
         <TaskContainer key={id}>
@@ -17,7 +17,7 @@ const TaskList = ({ tasks, title, onCheckboxClick, isPendingList }) => {
           <TaskName>{name}</TaskName>
         </TaskContainer>
       ))}
-    </CompletedTasksContainer>
+    </TasksContainer>
   );
 };
 
