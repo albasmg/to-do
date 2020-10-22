@@ -36,12 +36,19 @@ export const FormInput = styled.input`
 
 export const FormButton = styled.button`
   height: ${rem(40)};
-  width: ${rem(60)};
+  width: ${rem(80)};
   border: 2px solid ${(props) => props.theme.colors.primaryColor};
-  color: ${(props) => props.theme.colors.primaryColor};
-  background-color: ${(props) => props.theme.colors.lightColor};
+  color: ${(props) => props.theme.colors.lightColor};
+  background-color: ${(props) => props.theme.colors.primaryColor};
   margin-left: ${rem(8)};
   border-radius: ${rem(8)};
   outline: none;
   cursor: pointer;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${(props) => props.theme.colors.primaryColor};
+      background-color: ${(props) => props.theme.colors.lightColor}; ;
+    `}
 `;

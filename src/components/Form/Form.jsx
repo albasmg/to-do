@@ -23,7 +23,9 @@ const Form = ({ onButtonClick, onFormChange, value }) => {
           onChange={(ev) => onFormChange(ev)}
           value={value}
         />
-        <FormButton onClick={() => onButtonClick()}>Add</FormButton>
+        <FormButton disabled={!value} onClick={() => onButtonClick()}>
+          Add task
+        </FormButton>
       </FormContainer>
     </Header>
   );

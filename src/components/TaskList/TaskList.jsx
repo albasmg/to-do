@@ -2,6 +2,7 @@ import React from 'react';
 import {
   TasksContainer,
   Title,
+  Decoration,
   TaskContainer,
   Checkbox,
   TaskName,
@@ -11,10 +12,14 @@ const TaskList = ({ tasks, title, onCheckboxClick, isPendingList }) => {
   return (
     <TasksContainer>
       <Title>{title}</Title>
+      <Decoration isCompleted={!isPendingList} />
       {tasks.map(({ name, id }) => (
-        <TaskContainer key={id}>
-          <Checkbox onClick={() => onCheckboxClick(id, isPendingList)} />
-          <TaskName>{name}</TaskName>
+        <TaskContainer isCompleted={!isPendingList} key={id}>
+          <Checkbox
+            isCompleted={!isPendingList}
+            onClick={() => onCheckboxClick(id, isPendingList)}
+          />
+          <TaskName isCompleted={!isPendingList}>{name}</TaskName>
         </TaskContainer>
       ))}
     </TasksContainer>
